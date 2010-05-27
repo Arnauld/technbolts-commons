@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 
 /**
  * FuntionUtils
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision: 1.3 $
  */
 public class FunctionUtils

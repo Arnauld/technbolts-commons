@@ -5,7 +5,7 @@ package org.technbolts.util.functional;
  * Utility interface to define a function taking one argument of type <code>PARAM</code>
  * and returning a result of type <code>RESULT</code>.
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision: 1.2 $
  * @param <PARAM> type of the function parameter
  * @param <RESULT> type of the function result

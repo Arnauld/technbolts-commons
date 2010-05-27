@@ -23,7 +23,7 @@ import org.xml.sax.SAXException;
 
 /**
  * javax implementation
- * @author <a href="mailto:trouillard@eptica.com">trouillard</a>
+ * @author <a href="mailto:trouillard@gmail.com">trouillard</a>
  * @version $Revision$
  */
 public class DOMHelperImpl implements DOMHelper

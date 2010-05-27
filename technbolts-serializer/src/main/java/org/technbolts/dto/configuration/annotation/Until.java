@@ -14,7 +14,7 @@ import org.technbolts.dto.configuration.Version;
  *  For a fine grainer way to activate/deactivate a field in its serialization
  *  form prefer the annotation <code>OmitField</code>
  *  
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  * @see OmitField
  * @see Since

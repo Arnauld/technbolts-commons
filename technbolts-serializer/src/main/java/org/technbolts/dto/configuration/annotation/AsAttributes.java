@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * AsAttributes acts as container to define several AsAttribute.
  * 
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 @Retention(RetentionPolicy.RUNTIME)

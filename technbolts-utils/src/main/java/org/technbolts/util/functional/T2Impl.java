@@ -3,7 +3,7 @@ package org.technbolts.util.functional;
 
 /**
  * T2Impl
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  * @param <TYPE1>
  * @param <TYPE2>

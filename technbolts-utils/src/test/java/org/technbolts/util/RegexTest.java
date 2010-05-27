@@ -1,6 +1,7 @@
 /* $Id$ */
 package org.technbolts.util;
 
+import static org.junit.Assert.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -17,17 +18,20 @@ import java.util.regex.Pattern;
 import junit.framework.TestCase;
 
 import org.apache.commons.io.IOUtils;
+import org.junit.Before;
+import org.junit.Test;
 
-public class RegexTest extends TestCase
+public class RegexTest
 {
     private ExecutorService executor;
     
-    @Override
+    @Before
     protected void setUp() throws Exception
     {
         executor = Executors.newSingleThreadExecutor();
     }
-    
+
+    @Test
     public void testConstantsConsistency () {
         assertEquals(Pattern.CANON_EQ,         Regex.CANON_EQ);
         assertEquals(Pattern.CASE_INSENSITIVE, Regex.CASE_INSENSITIVE);
@@ -38,7 +42,8 @@ public class RegexTest extends TestCase
         assertEquals(Pattern.UNICODE_CASE,     Regex.UNICODE_CASE);
         assertEquals(Pattern.UNIX_LINES,       Regex.UNIX_LINES);
     }
-    
+
+    @Test
     public void testFind_normalCaseEx1 () throws Exception {
         String pattern = "([a-zA-Z]{2})\\-([a-zA-Z]{6})";
         final Regex regex = new Regex(pattern, DOTALL+CASE_INSENSITIVE+UNICODE_CASE+MULTILINE);
@@ -51,7 +56,8 @@ public class RegexTest extends TestCase
         assertFalse (regex.find(input2));
         assertEquals(False, regex.findResult(input2, 50, TimeUnit.SECONDS));
     }
-    
+
+    @Test
     public void testMatches_normalCaseEx1 () throws Exception {
         String pattern = "([a-zA-Z]{2})\\-([a-zA-Z]{6})";
         final Regex regex = new Regex(pattern, DOTALL+CASE_INSENSITIVE+UNICODE_CASE+MULTILINE);
@@ -64,7 +70,8 @@ public class RegexTest extends TestCase
         assertTrue  (regex.matches(input2));
         assertEquals(True, regex.matchesResult(input2, 50, TimeUnit.SECONDS));
     }
-    
+
+    @Test
     public void testRMatcher_findNormalCaseEx1 () throws Exception {
         String pattern = "([a-zA-Z]{2})\\-([a-zA-Z]{6})";
         final Regex regex = new Regex(pattern, DOTALL+CASE_INSENSITIVE+UNICODE_CASE+MULTILINE);
@@ -75,7 +82,8 @@ public class RegexTest extends TestCase
         Regex.RMatcher matcher2 = regex.matcher("12aA-ABc1cDEf45", 500, TimeUnit.MILLISECONDS);
         assertEquals(False, matcher2.find());
     }
-    
+
+    @Test
     public void testRMatcher_matchesNormalCaseEx1 () throws Exception {
         String pattern = "([a-zA-Z]{2})\\-([a-zA-Z]{6})";
         final Regex regex = new Regex(pattern, DOTALL+CASE_INSENSITIVE+UNICODE_CASE+MULTILINE);
@@ -86,7 +94,8 @@ public class RegexTest extends TestCase
         Regex.RMatcher matcher2 = regex.matcher("12aA-ABcDEf45", 500, TimeUnit.MILLISECONDS);
         assertEquals(False, matcher2.matches());
     }
-    
+
+    @Test
     public void testRMatcher_replaceAllNormalCaseEx1 () throws Exception {
         String pattern = "([a-zA-Z]{2})\\-([a-z]{6})";
         final Regex regex = new Regex(pattern, DOTALL+MULTILINE);
@@ -103,9 +112,10 @@ public class RegexTest extends TestCase
     
     private final String infinite_input   = "V0xL182zronique_CHATAIGNIER/Do/Paris/Cnav/FR <V0xL182zronique_CHATAIGNIER/Do/Paris/Cnav/FR@cram-nordpicardie.fr>";
     private final String infinite_pattern = "([a-z0-9]+([a-z0-9\\-\\+\\._\\=]*[a-z0-9]+)?)*@[a-z0-9]([a-z0-9\\-]*[a-z0-9]+)?(\\.[a-z0-9]+([a-z0-9\\-]+[a-z0-9]+)?)*";
-    
-    
+
+    @Test
     public void testInfiniteLoopEx1 () throws Exception {
+
         final int    Timeout = 200;
         final Regex regex = new Regex(infinite_pattern, DOTALL|CASE_INSENSITIVE);
         
@@ -123,7 +133,8 @@ public class RegexTest extends TestCase
         Regex.BooleanResult status = future.get(Timeout*2, TimeUnit.MILLISECONDS);
         assertEquals(Regex.BooleanResult.Timeout, status);
     }
-    
+
+    @Test
     public void testInfiniteLoopEx2 () throws Exception {
         final int    Timeout = 1000;
         final String input   = IOUtils.toString(getClass().getResourceAsStream("regex-content-ex1.txt"), UTF_8);
@@ -144,7 +155,8 @@ public class RegexTest extends TestCase
         Regex.BooleanResult status = future.get(Timeout*2, TimeUnit.MILLISECONDS);
         assertEquals(Regex.BooleanResult.Timeout, status);
     }
-    
+
+    @Test
     public void testMatcherInfiniteLoopEx1 () throws Exception {
         final int    Timeout = 1000;
         final String input   = IOUtils.toString(getClass().getResourceAsStream("regex-content-ex1.txt"), UTF_8);
@@ -166,7 +178,8 @@ public class RegexTest extends TestCase
         Regex.BooleanResult status = future.get(Timeout*2, TimeUnit.MILLISECONDS);
         assertEquals(Regex.BooleanResult.Timeout, status);
     }
-    
+
+    @Test
     public void testMatcherInfiniteLoopEx2 () throws Exception {
         final int    Timeout = 1000;
         final String input   = infinite_input;
@@ -188,7 +201,8 @@ public class RegexTest extends TestCase
         Regex.BooleanResult status = future.get(Timeout*2, TimeUnit.MILLISECONDS);
         assertEquals(Regex.BooleanResult.Timeout, status);
     }
-    
+
+    @Test
     public void testMatcherInfiniteLoopEx3 () throws Exception {
         final int    Timeout = 1000;
         final String input   = infinite_input;

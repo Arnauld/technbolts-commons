@@ -14,7 +14,7 @@ import org.technbolts.dto.configuration.Version;
  * This allows an element to be serialized or not as attribute between
  * different version.
  * 
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 @Retention(RetentionPolicy.RUNTIME)

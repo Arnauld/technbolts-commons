@@ -14,7 +14,7 @@ import org.apache.commons.lang.StringUtils;
  *      V0.ordinal() < V1.ordinal ()
  * </pre>
  * 
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  * @see #ordinal()
  */

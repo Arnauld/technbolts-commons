@@ -4,7 +4,7 @@ package org.technbolts.util.functional;
 /**
  * Utility interface to define a procedure/callback taking no argument.
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision: 1.1 $
  * @param <PARAM>
  */

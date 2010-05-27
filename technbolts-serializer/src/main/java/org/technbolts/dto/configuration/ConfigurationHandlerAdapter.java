@@ -12,7 +12,7 @@ import org.technbolts.dto.configuration.definition.OmitFieldModel;
 
 /**
  * ConfigurationHandlerAdapter
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 public class ConfigurationHandlerAdapter implements ConfigurationHandler

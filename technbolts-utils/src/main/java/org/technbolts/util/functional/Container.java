@@ -11,7 +11,7 @@ import java.util.List;
  * over a filtered view (<code>filter(F1.ToBoolean<T>)</code>) of the elements or 
  * over a transformed view (<code>transform(F1<T,R>)</code>) of the elements.
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  * @param <T>
  */

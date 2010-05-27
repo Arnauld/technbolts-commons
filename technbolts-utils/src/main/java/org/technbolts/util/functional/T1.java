@@ -4,7 +4,7 @@ package org.technbolts.util.functional;
 /**
  * T1 tuple of one value.
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision: 1.1 $
  * @param <TYPE>
  */

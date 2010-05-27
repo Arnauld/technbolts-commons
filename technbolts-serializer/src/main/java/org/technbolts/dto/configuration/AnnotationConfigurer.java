@@ -39,7 +39,7 @@ import org.technbolts.util.New;
  * AnnotationConfigurer
  * 
  * 
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 public class AnnotationConfigurer
@@ -48,7 +48,7 @@ public class AnnotationConfigurer
     
     private boolean activateCheckMode;
     private ConfigurationHandler configurationHandler;
-    private String[] introspectedPackagePatterns = {"com.technbolts.*dto*"};
+    private String[] introspectedPackagePatterns = {"org.technbolts.*dto*"};
     
     // keep information of the type/version pair, used to ensure a type is used
     // in only one version, and also that a type is already scanned

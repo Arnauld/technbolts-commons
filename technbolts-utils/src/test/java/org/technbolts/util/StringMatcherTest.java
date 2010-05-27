@@ -9,7 +9,7 @@ import static org.junit.Assert.assertFalse;
  * Date: 26 mai 2010
  * Time: 15:23:57
  *
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 public class StringMatcherTest {

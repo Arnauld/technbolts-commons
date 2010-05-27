@@ -12,7 +12,7 @@ import org.technbolts.dto.configuration.Version;
  * Set of utilities methods to extract annotation informations on <code>Field</code>
  * and <code>Class</code>.
  * 
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 public class AnnotationUtils

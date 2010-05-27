@@ -18,7 +18,7 @@ import org.technbolts.dto.configuration.annotation.OmitClass;
  * and an exception will be raised.
  * </p>
  * 
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  * @see #createOrFail(Class, String)
  * @see ConfigurationHandler#aliasField(String, Class, String)

@@ -15,7 +15,7 @@ import org.technbolts.dto.configuration.Version;
  * For new added field or removed field, the <code>Since</code> or <code>Until</code>
  * annotations could be more understandable for reader. 
  * 
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  * @see Since
  * @see Until

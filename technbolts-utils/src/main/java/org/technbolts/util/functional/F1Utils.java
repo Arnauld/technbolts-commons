@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * F1Utils
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 public class F1Utils

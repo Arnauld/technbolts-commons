@@ -4,7 +4,7 @@ package org.technbolts.util.functional;
 /**
  * T2 tuple of two values.
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision: 1.1 $
  * @param <TYPE1>
  * @param <TYPE2>

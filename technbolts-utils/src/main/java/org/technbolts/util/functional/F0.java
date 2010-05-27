@@ -5,7 +5,7 @@ package org.technbolts.util.functional;
  * Utility interface to define a function taking no argument
  * and returning a result of type <code>RESULT</code>.
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision: 1.1 $
  * @param <RESULT> type of the function result
  */

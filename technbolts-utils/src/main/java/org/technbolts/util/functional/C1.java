@@ -5,7 +5,7 @@ package org.technbolts.util.functional;
 /**
  * Utility interface to define a procedure/callback taking one argument of type <code>PARAM</code>.
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision: 1.2 $
  * @param <PARAM>
  */

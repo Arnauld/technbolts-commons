@@ -1,0 +1,7 @@
+h1. GIT
+
+added in .git
+
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master

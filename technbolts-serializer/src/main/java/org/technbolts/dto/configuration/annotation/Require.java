@@ -15,7 +15,7 @@ import org.technbolts.dto.configuration.Version;
  *  (let say V1 ) own version.
  *  This is mainly for backward compatibility and version requirement management.
  *   
- * @author <a href="mailto:arnauld.loyer@technbolts.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 @Retention(RetentionPolicy.RUNTIME)

@@ -5,7 +5,7 @@ package org.technbolts.util;
  * StringSelector
  * 
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
  */
 public class StringSelector

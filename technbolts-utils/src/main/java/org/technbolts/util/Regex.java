@@ -17,7 +17,7 @@ import java.util.regex.PatternSyntaxException;
  *  and limit the number of living threads, thus should be faster.
  *  
  * 
- * @author <a href="mailto:arnauld.loyer@eptica.com">Loyer Arnauld</a>
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision: 1.1 $
  * @see java.util.regex.Pattern
  * @see #matches(CharSequence)
