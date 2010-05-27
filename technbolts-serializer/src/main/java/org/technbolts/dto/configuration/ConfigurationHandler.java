@@ -25,7 +25,10 @@ public interface ConfigurationHandler
 
     void registerConverter(Class<?> definedIn, String fieldName, Object converter);
     
-    void registerConverter(Class<?> definedIn, Object converter);
+    void registerConverter(Class<?> type, Object converter);
     
     void useAttributeFor(Class<?> definedIn, String fieldName);
+
+    void fieldOrder(Class<?> definedIn, String fieldName, int order);
+
 }

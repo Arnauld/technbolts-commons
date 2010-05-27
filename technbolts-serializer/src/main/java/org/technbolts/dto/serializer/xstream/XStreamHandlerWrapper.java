@@ -58,6 +58,14 @@ public class XStreamHandlerWrapper implements ConfigurationHandler
         omitField(classField.getDefinedIn(), classField.getFieldName());
     }
 
+    private static boolean fieldOrderNotSupportedNotified = false;
+    public void fieldOrder(Class<?> definedIn, String fieldName, int order) {
+        if(fieldOrderNotSupportedNotified)
+            return;
+        fieldOrderNotSupportedNotified = true;
+        logger.warn("Field ordering is not supported, it is not required in either xml or json");
+    }
+
     public void registerConverter(Class<?> definedIn, Object aConverter)
     {
         SingleValueConverter svc = getAdapter(aConverter, SingleValueConverter.class);

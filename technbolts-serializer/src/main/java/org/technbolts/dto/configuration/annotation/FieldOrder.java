@@ -10,6 +10,8 @@ import java.lang.annotation.Target;
 /**
  * Defines field serialization order within a class.
  *
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
+ * @version $Revision$
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.TYPE})
@@ -17,5 +19,5 @@ public @interface FieldOrder {
     Version since() default Version.V0;
     Version until() default Version.Last;
     
-    int order() default -1;
+    int value();
 }

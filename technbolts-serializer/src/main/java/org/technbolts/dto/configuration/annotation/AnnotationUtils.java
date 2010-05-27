@@ -131,8 +131,100 @@ public class AnnotationUtils
         return found;
     }
     
-    
-    
+    /**
+     * Extract the FieldOrder that match the specified version if any, otherwise
+     * return <code>null</code>.
+     * @param field
+     * @param version
+     * @return
+     */
+    public static FieldOrder getFieldOrder(Field field, Version version)  {
+        try
+        {
+            return getFieldOrder(field, version, false);
+        }
+        catch (InvalidConfigurationException e)
+        {
+            // should not happen since not in check mode
+            if(logger.isWarnEnabled())
+                logger.warn("Invalid annotation description on field "+field, e);
+
+            return null;
+        }
+    }
+
+    /**
+     * Extract the <code>FieldOrder</code> that match the specified version if any, otherwise
+     * return <code>null</code>.
+     * This methods also check that two <code>FieldOrder</code> definition don't overlaps within
+     * the same versions range.
+     *
+     * @param field
+     * @param version
+     * @param inCheckMode
+     * @return
+     * @throws InvalidConfigurationException
+     */
+    public static FieldOrder getFieldOrder(Field field, Version version, boolean inCheckMode) throws InvalidConfigurationException {
+        FieldOrder  fieldOrder  = field.getAnnotation(FieldOrder.class);
+        FieldOrders fieldOrders = field.getAnnotation(FieldOrders.class);
+        return getFieldOrder(fieldOrder, fieldOrders, version, inCheckMode);
+    }
+
+    /**
+     * Extract the  <code>FieldOrder</code> that match the specified version if any, otherwise
+     * return <code>null</code>.
+     * This methods also check that two  <code>FieldOrder</code> definition don't overlaps within
+     * the same versions range.
+     *
+     * @param fieldOrder
+     * @param fieldOrders
+     * @param version
+     * @param inCheckMode
+     * @return
+     * @throws InvalidConfigurationException
+     */
+    public static FieldOrder getFieldOrder(FieldOrder fieldOrder, FieldOrders fieldOrders, Version version, boolean inCheckMode) throws InvalidConfigurationException {
+
+        boolean notInCheckMode = (inCheckMode==false);
+
+        FieldOrder found = null;
+        if(fieldOrder!=null)
+        {
+            boolean versionInRange = version.isInRange(fieldOrder.since(), fieldOrder.until());
+
+            if(logger.isTraceEnabled())
+                logger.trace("FieldOrder "+fieldOrder+" matching version "+version+" ? "+versionInRange);
+
+            if(versionInRange)
+            {
+                if(notInCheckMode)
+                    return fieldOrder;
+                found = fieldOrder;
+            }
+        }
+        if(fieldOrders!=null)
+        {
+            for(FieldOrder item : fieldOrders.value())
+            {
+                boolean versionInRange = version.isInRange(item.since(), item.until());
+
+                if(logger.isTraceEnabled())
+                    logger.trace("FieldOrder "+item+" matching version "+version+" ? "+versionInRange);
+
+                if(versionInRange)
+                {
+                    if(notInCheckMode)
+                        return item;
+                    else if(found!=null)
+                        throw new InvalidConfigurationException ("FieldOrder version overlap "+found+" "+item);
+                    found = item;
+                }
+            }
+        }
+        return found;
+    }
+
     /**
      * Extract the <code>AsAttribute</code> that match the specified version if any, otherwise
      * return <code>null</code>.

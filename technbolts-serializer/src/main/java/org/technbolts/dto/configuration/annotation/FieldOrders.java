@@ -8,14 +8,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Defines field serialization order within a class.
+ * Converters acts as container to define several FieldOrder.
  *
+ * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
+ * @version $Revision$
+ * @see FieldOrder
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.TYPE})
 public @interface FieldOrders {
-    Version since() default Version.V0;
-    Version until() default Version.Last;
-
-    int order() default -1;
+    FieldOrder[] value();
 }
