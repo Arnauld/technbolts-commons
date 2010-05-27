@@ -1,0 +1,8 @@
+# Ignore all dotfiles...
+.*
+
+# Ignore target...
+target/
+
+# except for .gitignore
+!.gitignore

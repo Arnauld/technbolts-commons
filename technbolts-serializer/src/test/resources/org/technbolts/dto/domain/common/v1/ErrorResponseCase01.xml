@@ -1,0 +1,6 @@
+<errors>
+  <error>
+    <code id="100" label="element_invalid"/>
+    <argument>grounch</argument>
+  </error>
+</errors>
