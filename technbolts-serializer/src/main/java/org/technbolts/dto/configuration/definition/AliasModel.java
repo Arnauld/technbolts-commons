@@ -8,7 +8,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  * AliasModel
  * @author <a href="mailto:arnauld.loyer@gmail.com">Loyer Arnauld</a>
  * @version $Revision$
- * @see #org.technbolts.dto.configuration.annotation.Alias
+ * @see org.technbolts.dto.configuration.annotation.Alias
  */
 public class AliasModel
 {

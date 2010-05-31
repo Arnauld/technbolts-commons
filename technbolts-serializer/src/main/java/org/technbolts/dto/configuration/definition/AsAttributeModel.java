@@ -12,23 +12,23 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  */
 public class AsAttributeModel
 {
-    private Class<?> type;
+    private Class<?> definedIn;
     private String fieldName;
     
-    public AsAttributeModel(Class<?> type, String fieldName)
+    public AsAttributeModel(Class<?> definedIn, String fieldName)
     {
-        this.type  = type;
+        this.definedIn = definedIn;
         this.fieldName = fieldName;
     }
 
-    public Class<?> getType()
+    public Class<?> getDefinedIn()
     {
-        return type;
+        return definedIn;
     }
 
-    public void setType(Class<?> type)
+    public void setDefinedIn(Class<?> definedIn)
     {
-        this.type = type;
+        this.definedIn = definedIn;
     }
 
     public String getFieldName()

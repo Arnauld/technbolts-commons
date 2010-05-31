@@ -11,6 +11,7 @@ import org.technbolts.dto.configuration.annotation.*;
 public class FieldSerializer {
 
     private Version version;
+    private java.lang.reflect.Field field;
     private Alias alias;
     private Converter converter;
     private OmitField omitted;
@@ -21,17 +22,15 @@ public class FieldSerializer {
     private Require require;
     private RequireSuper requireSuper;
 
-    public Version getVersion() {
-        return version;
+    public boolean isAliasDefined () {
+        return (alias!=null);
     }
-
-    public void setVersion(Version version) {
-        this.version = version;
+    
+    public String alias () {
+        if(alias!=null && alias.value()!=null)
+            return alias.value();
+        else
+            return field.getName();
     }
-
-    public Alias getAlias() {
-        return alias;
-    }
-
 
 }

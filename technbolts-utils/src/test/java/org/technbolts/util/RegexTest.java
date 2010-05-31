@@ -10,12 +10,11 @@ import static java.util.regex.Pattern.DOTALL;
 import static java.util.regex.Pattern.MULTILINE;
 import static java.util.regex.Pattern.UNICODE_CASE;
 import static org.apache.commons.lang.CharEncoding.UTF_8;
+import static org.junit.Assume.assumeTrue;
 import static org.technbolts.util.Regex.BooleanResult.*;
 
 import java.util.concurrent.*;
 import java.util.regex.Pattern;
-
-import junit.framework.TestCase;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Before;
@@ -26,7 +25,7 @@ public class RegexTest
     private ExecutorService executor;
     
     @Before
-    protected void setUp() throws Exception
+    public void setUp() throws Exception
     {
         executor = Executors.newSingleThreadExecutor();
     }
@@ -158,6 +157,8 @@ public class RegexTest
 
     @Test
     public void testMatcherInfiniteLoopEx1 () throws Exception {
+        assumeTrue(Boolean.getBoolean("long-running-test"));
+
         final int    Timeout = 1000;
         final String input   = IOUtils.toString(getClass().getResourceAsStream("regex-content-ex1.txt"), UTF_8);
         final String pattern = "(re)?cherch.*\\s+.*\\s+(homme.?|femme.?)";
@@ -181,6 +182,8 @@ public class RegexTest
 
     @Test
     public void testMatcherInfiniteLoopEx2 () throws Exception {
+        assumeTrue(Boolean.getBoolean("long-running-test"));
+
         final int    Timeout = 1000;
         final String input   = infinite_input;
         final String pattern = infinite_pattern;
@@ -204,6 +207,8 @@ public class RegexTest
 
     @Test
     public void testMatcherInfiniteLoopEx3 () throws Exception {
+        assumeTrue(Boolean.getBoolean("long-running-test"));
+        
         final int    Timeout = 1000;
         final String input   = infinite_input;
         final String pattern = infinite_pattern;

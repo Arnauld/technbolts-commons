@@ -11,6 +11,19 @@
 
     <artifactId>technbolts-utils</artifactId>
 
+    <profiles>
+        <profile>
+            <id>allTests</id>
+            <properties>
+                <long-running-test>true</long-running-test>
+            </properties>
+        </profile>
+    </profiles>
+
+    <properties>
+        <long-running-test>false</long-running-test>
+    </properties>
+
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!--         Dependencies                                 -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -98,5 +111,32 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.4.3</version>
+                <!--
+                    By default, the Surefire Plugin will automatically include all test classes with the following wildcard patterns:
+                    "**/Test*.java" - includes all of its subdirectory and all java filenames that start with "Test". "**/*Test.java" -
+                    includes all of its subdirectory and all java filenames that end with "Test". "**/*TestCase.java" - includes all of
+                    its subdirectory and all java filenames that end with "TestCase".
+                -->
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <systemProperties>
+                        <property>
+                            <name>long-running-test</name>
+                            <value>${long-running-test}</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
